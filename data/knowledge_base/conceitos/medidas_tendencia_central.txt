@@ -1,0 +1,39 @@
+# Medidas de Tendência Central
+
+Source: Estatística Descritiva
+
+## Definição
+Medidas que indicam o "centro" ou valor típico de um conjunto de dados.
+
+## Tipos de Média
+
+### 1. Média Aritmética
+- Soma de todos os valores dividida pela quantidade
+- Fórmula: x̄ = Σxᵢ / n
+- Sensível a outliers
+
+### 2. Média Geométrica
+- Raiz n-ésima do produto de n valores
+- Sempre menor que aritmética
+- Uso: Taxas de crescimento
+
+### 3. Média Harmônica
+- Inverso da média dos inversos
+- Sempre a menor das três médias
+- Uso: Velocidades, taxas
+
+## Mediana
+- Valor central quando dados ordenados
+- Não afetada por outliers
+
+## Moda
+- Valor mais frequente
+- Pode não existir ou haver múltiplas
+
+## Comparação Média vs Mediana
+
+| Distribuição | Relação |
+|--------------|---------|
+| Simétrica | Média ≈ Mediana |
+| Assimétrica direita | Média > Mediana |
+| Assimétrica esquerda | Média < Mediana |

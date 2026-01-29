@@ -1,0 +1,27 @@
+# NHANES 2015-2016 - Resumo do Dataset
+
+Source: data/raw/nhanes_2015_2016.csv
+
+## Informações Gerais
+- Total de registros (adultos): 5,735
+- Variáveis disponíveis: 28
+
+## Estatísticas Descritivas
+
+### IMC (Índice de Massa Corporal)
+- N: 5,662
+- Média: 29.38
+- Mediana: 28.30
+- Desvio Padrão: 7.10
+- Mínimo: 14.50
+- Máximo: 67.30
+
+### Peso (kg)
+- Média: 81.34
+- Mediana: 78.20
+- Desvio Padrão: 21.76
+
+### Altura (cm)
+- Média: 166.14
+- Mediana: 166.00
+- Desvio Padrão: 10.08

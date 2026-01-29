@@ -1,0 +1,99 @@
+Source: https://en.wikipedia.org/wiki/Statistical_hypothesis_testing
+Topic: Statistical hypothesis testing
+
+A statistical hypothesis test is a method of statistical inference used to decide whether the data provide sufficient evidence to reject a particular hypothesis. A statistical hypothesis test typically involves a calculation of a test statistic. Then a decision is made, either by comparing the test statistic to a critical value or equivalently by evaluating a p-value computed from the test statistic. Roughly 100 specialized statistical tests are in use and noteworthy.
+
+While hypothesis testing was popularized early in the 20th century, early forms were used in the 1700s. The first use is credited to John Arbuthnot (1710), followed by Pierre-Simon Laplace (1770s), in analyzing the human sex ratio at birth; see § Human sex ratio.
+
+Paul Meehl has argued that the epistemological importance of the choice of null hypothesis has gone largely unacknowledged. When the null hypothesis is predicted by theory, a more precise experiment will be a more severe test of the underlying theory. When the null hypothesis defaults to "no difference" or "no effect", a more precise experiment is a less severe test of the theory that motivated performing the experiment. An examination of the origins of the latter practice may therefore be useful:
+
+1778: Pierre Laplace compares the birthrates of boys and girls in multiple European cities. He states: "it is natural to conclude that these possibilities are very nearly in the same ratio". Thus, the null hypothesis in this case that the birthrates of boys and girls should be equal given "conventional wisdom".
+
+1900: Karl Pearson develops the chi squared test to determine "whether a given form of frequency curve will effectively describe the samples drawn from a given population." Thus the null hypothesis is that a population is described by some distribution predicted by theory. He uses as an example the numbers of five and sixes in the Weldon dice throw data.
+
+1904: Karl Pearson develops the concept of "contingency" in order to determine whether outcomes are independent of a given categorical factor. Here the null hypothesis is by default that two things are unrelated (e.g. scar formation and death rates from smallpox). The null hypothesis in this case is no longer predicted by theory or conventional wisdom, but is instead the principle of indifference that led Fisher and others to dismiss the use of "inverse probabilities".
+
+Modern significance testing is largely the product of Karl Pearson (p-value, Pearson's chi-squared test), William Sealy Gosset (Student's t-distribution), and Ronald Fisher ("null hypothesis", analysis of variance, "significance test"), while hypothesis testing was developed by Jerzy Neyman and Egon Pearson (son of Karl). Ronald Fisher began his life in statistics as a Bayesian (Zabell 1992), but Fisher soon grew disenchanted with the subjectivity involved (namely use of the principle of indifference when determining prior probabilities), and sought to provide a more "objective" approach to inductive inference.
+
+Fisher emphasized rigorous experimental design and methods to extract a result from few samples assuming Gaussian distributions. Neyman (who teamed with the younger Pearson) emphasized mathematical rigor and methods to obtain more results from many samples and a wider range of distributions. Modern hypothesis testing is an inconsistent hybrid of the Fisher vs Neyman/Pearson formulation, methods and terminology developed in the early 20th century.
+
+Fisher popularized the "significance test". He required a null-hypothesis (corresponding to a population frequency distribution) and a sample. His (now familiar) calculations determined whether to reject the null-hypothesis or not. Significance testing did not utilize an alternative hypothesis so there was no concept of a Type II error (false negative).
+
+The p-value was devised as an informal, but objective, index meant to help a researcher determine (based on other knowledge) whether to modify future experiments or strengthen one's faith in the null hypothesis. Hypothesis testing (and Type I/II errors) was devised by Neyman and Pearson as a more objective alternative to Fisher's p-value, also meant to determine researcher behaviour, but without requiring any inductive inference by the researcher.
+
+Neyman & Pearson considered a different problem to Fisher (which they called "hypothesis testing"). They initially considered two simple hypotheses (both with frequency distributions). They calculated two probabilities and typically selected the hypothesis associated with the higher probability (the hypothesis more likely to have generated the sample). Their method always selected a hypothesis. It also allowed the calculation of both types of error probabilities.
+
+Fisher and Neyman/Pearson clashed bitterly. Neyman/Pearson considered their formulation to be an improved generalization of significance testing (the defining paper was abstract; Mathematicians have generalized and refined the theory for decades). Fisher thought that it was not applicable to scientific research because often, during the course of the experiment, it is discovered that the initial assumptions about the null hypothesis are questionable due to unexpected sources of error. He believed that the use of rigid reject/accept decisions based on models formulated before data is collected was incompatible with this common scenario faced by scientists and attempts to apply this method to scientific research would lead to mass confusion.
+
+The dispute between Fisher and Neyman–Pearson was waged on philosophical grounds, characterized by a philosopher as a dispute over the proper role of models in statistical inference.
+
+Events intervened: Neyman accepted a position in the University of California, Berkeley in 1938, breaking his partnership with Pearson and separating the disputants (who had occupied the same building). World War II provided an intermission in the debate. The dispute between Fisher and Neyman terminated (unresolved after 27 years) with Fisher's death in 1962. Neyman wrote a well-regarded eulogy. Some of Neyman's later publications reported p-values and significance levels.
+
+The modern version of hypothesis testing is generally called the null hypothesis significance testing (NHST) and is a hybrid of the Fisher approach with the Neyman-Pearson approach. In 2000, Raymond S. Nickerson wrote an article stating that NHST was (at the time) "arguably the most widely used method of analysis of data collected in psychological experiments and has been so for about 70 years" and that it was at the same time "very controversial".
+
+This fusion resulted from confusion by writers of statistical textbooks (as predicted by Fisher) beginning in the 1940s (but signal detection, for example, still uses the Neyman/Pearson formulation). Great conceptual differences and many caveats in addition to those mentioned above were ignored. Neyman and Pearson provided the stronger terminology, the more rigorous mathematics and the more consistent philosophy, but the subject taught today in introductory statistics has more similarities with Fisher's method than theirs.
+
+Sometime around 1940, authors of statistical text books began combining the two approaches by using the p-value in place of the test statistic (or data) to test against the Neyman–Pearson "significance level".
+
+Hypothesis testing and philosophy intersect. Inferential statistics, which includes hypothesis testing, is applied probability. Both probability and its application are intertwined with philosophy. Philosopher David Hume wrote, "All knowledge degenerates into probability." Competing practical definitions of probability reflect philosophical differences. The most common application of hypothesis testing is in the scientific interpretation of experimental data, which is naturally studied by the philosophy of science.
+
+Fisher and Neyman opposed the subjectivity of probability. Their views contributed to the objective definitions. The core of their historical disagreement was philosophical.
+
+Many of the philosophical criticisms of hypothesis testing are discussed by statisticians in other contexts, particularly correlation does not imply causation and the design of experiments.
+Hypothesis testing is of continuing interest to philosophers.
+
+Statistics is increasingly being taught in schools with hypothesis testing being one of the elements taught. Many conclusions reported in the popular press (political opinion polls to medical studies) are based on statistics. Some writers have stated that statistical analysis of this kind allows for thinking clearly about problems involving mass data, as well as the effective reporting of trends and inferences from said data, but caution that writers for a broad public should have a solid understanding of the field in order to use the terms and concepts correctly. An introductory college statistics class places much emphasis on hypothesis testing – perhaps half of the course. Such fields as literature and divinity now include findings based on statistical analysis (see the Bible Analyzer). An introductory statistics class teaches hypothesis testing as a cookbook process. Hypothesis testing is also taught at the postgraduate level. Statisticians learn how to create good statistical test procedures (like z, Student's t, F and chi-squared). Statistical hypothesis testing is considered a mature area within statistics, but a limited amount of development continues.
+
+An academic study states that the cookbook method of teaching introductory statistics leaves no time for history, philosophy or controversy. Hypothesis testing has been taught as received unified method. Surveys showed that graduates of the class were filled with philosophical misconceptions (on all aspects of statistical inference) that persisted among instructors. While the problem was addressed more than a decade ago, and calls for educational reform continue, students still graduate from statistics classes holding fundamental misconceptions about hypothesis testing. Ideas for improving the teaching of hypothesis testing include encouraging students to search for statistical errors in published papers, teaching the history of statistics and emphasizing the controversy in a generally dry subject.
+
+Raymond S. Nickerson commented:
+
+The debate about NHST has its roots in unresolved disagreements among major contributors to the development of theories of inferential statistics on which modern approaches are based. Gigerenzer et al. (1989) have reviewed in considerable detail the controversy between R. A. Fisher on the one hand and Jerzy Neyman and Egon Pearson on the other as well as the disagreements between both of these views and those of the followers of Thomas Bayes. They noted the remarkable fact that little hint of the historical and ongoing controversy is to be found in most textbooks that are used to teach NHST to its potential users. The resulting lack of an accurate historical perspective and understanding of the complexity and sometimes controversial philosophical foundations of various approaches to statistical inference may go a long way toward explaining the apparent ease with which statistical tests are misused and misinterpreted.
+
+The typical steps involved in performing a frequentist hypothesis test in practice are:
+
+The difference in the two processes applied to the radioactive suitcase example (below):
+
+The former report is adequate, the latter gives a more detailed explanation of the data and the reason why the suitcase is being checked.
+
+Not rejecting the null hypothesis does not mean the null hypothesis is "accepted" per se (though Neyman and Pearson used that word in their original writings; see the Interpretation section).
+
+The processes described here are perfectly adequate for computation. They seriously neglect the design of experiments considerations.
+
+It is particularly critical that appropriate sample sizes be estimated before conducting the experiment.
+
+The phrase "test of significance" was coined by statistician Ronald Fisher.
+
+When the null hypothesis is true and statistical assumptions are met, the probability that the p-value will be less than or equal to the significance level 
+
+
+
+α
+
+
+{\displaystyle \alpha }
+
+ is at most 
+
+
+
+α
+
+
+{\displaystyle \alpha }
+
+. This ensures that the hypothesis test maintains its specified false positive rate (provided that statistical assumptions are met).
+
+The p-value is the probability that a test statistic which is at least as extreme as the one obtained would occur under the null hypothesis. At a significance level of 0.05, a fair coin would be expected to (incorrectly) reject the null hypothesis (that it is fair) in 1 out of 20 tests on average. The p-value does not provide the probability that either the null hypothesis or its opposite is correct (a common source of confusion).
+
+If the p-value is less than the chosen significance threshold (equivalently, if the observed test statistic is in the critical region), then we say the null hypothesis is rejected at the chosen level of significance. If the p-value is not less than the chosen significance threshold (equivalently, if the observed test statistic is outside the critical region), then the null hypothesis is not rejected at the chosen level of significance.
+
+In the "lady tasting tea" example (below), Fisher required the lady to properly categorize all of the cups of tea to justify the conclusion that the result was unlikely to result from chance. His test revealed that if the lady was effectively guessing at random (the null hypothesis), there was a 1.4% chance that the observed results (perfectly ordered tea) would occur.
+
+Statistics are helpful in analyzing most collections of data. This is equally true of hypothesis testing which can justify conclusions even when no scientific theory exists. In the Lady tasting tea example, it was "obvious" that no difference existed between (milk poured into tea) and (tea poured into milk). The data contradicted the "obvious".
+
+Real world applications of hypothesis testing include:
+
+Statistical hypothesis testing plays an important role in the whole of statistics and in statistical inference. For example, Lehmann (1992) in a review of the fundamental paper by Neyman and Pearson (1933) says: "Nevertheless, despite their shortcomings, the new paradigm formulated in the 1933 paper, and the many developments carried out within its framework continue to play a central role in both the theory and practice of statistics and can be expected to do so in the foreseeable future".
+
+Significance testing has been the favored statistical tool in some experimental social sciences (over 90% of articles in the Journal of Applied Psychology during the early 1990s). Other fields have favored the estimation of parameters (e.g. effect size). Significance testing is used as a substitute for the traditional comparison of predicted value and experimental result at the core of the sci

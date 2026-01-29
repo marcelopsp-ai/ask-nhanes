@@ -1,0 +1,579 @@
+Source: https://en.wikipedia.org/wiki/Linear_regression
+Topic: Linear regression
+
+In statistics, linear regression is a model that estimates the relationship between a scalar response (dependent variable) and one or more explanatory variables (regressor or independent variable). A model with exactly one explanatory variable is a simple linear regression; a model with two or more explanatory variables is a multiple linear regression. This term is distinct from multivariate linear regression, which predicts multiple correlated dependent variables rather than a single dependent variable.
+
+In linear regression, the relationships are modeled using linear predictor functions whose unknown model parameters are estimated from the data. Most commonly, the conditional mean of the response given the values of the explanatory variables (or predictors) is assumed to be an affine function of those values; less commonly, the conditional median or some other quantile is used. Like all forms of regression analysis, linear regression focuses on the conditional probability distribution of the response given the values of the predictors, rather than on the joint probability distribution of all of these variables, which is the domain of multivariate analysis.
+
+Linear regression is also a type of machine learning algorithm, more specifically a supervised algorithm, that learns from the labelled datasets and maps the data points to the most optimized linear functions that can be used for prediction on new datasets.
+
+Linear regression was the first type of regression analysis to be studied rigorously, and to be used extensively in practical applications. This is because models which depend linearly on their unknown parameters are easier to fit than models which are non-linearly related to their parameters and because the statistical properties of the resulting estimators are easier to determine.
+
+Linear regression has many practical uses. Most applications fall into one of the following two broad categories:
+
+Linear regression models are often fitted using the least squares approach, but they may also be fitted in other ways, such as by minimizing the "lack of fit" in some other norm (as with least absolute deviations regression), or by minimizing a penalized version of the least squares cost function as in ridge regression (L-norm penalty) and lasso (L-norm penalty). Use of the Mean Squared Error (MSE) as the cost on a dataset that has many large outliers, can result in a model that fits the outliers more than the true data due to the higher importance assigned by MSE to large errors. So, cost functions that are robust to outliers should be used if the dataset has many large outliers. Conversely, the least squares approach can be used to fit models that are not linear models. Thus, although the terms "least squares" and "linear model" are closely linked, they are not synonymous.
+
+Given a data set 
+
+
+
+{
+
+y
+
+i
+
+
+,
+
+
+x
+
+i
+1
+
+
+,
+…
+,
+
+x
+
+i
+p
+
+
+
+}
+
+i
+=
+1
+
+
+n
+
+
+
+
+{\displaystyle \{y_{i},\,x_{i1},\ldots ,x_{ip}\}_{i=1}^{n}}
+
+ of n statistical units, a linear regression model assumes that the relationship between the dependent variable y and the vector of regressors x is linear. This relationship is modeled through a disturbance term or error variable ε—an unobserved random variable that adds "noise" to the linear relationship between the dependent variable and regressors. Thus the model takes the form
+
+
+
+
+y
+
+i
+
+
+=
+
+β
+
+0
+
+
++
+
+β
+
+1
+
+
+
+x
+
+i
+1
+
+
++
+⋯
++
+
+β
+
+p
+
+
+
+x
+
+i
+p
+
+
++
+
+ε
+
+i
+
+
+=
+
+
+x
+
+
+i
+
+
+
+T
+
+
+
+
+β
+
++
+
+ε
+
+i
+
+
+,
+
+i
+=
+1
+,
+…
+,
+n
+,
+
+
+{\displaystyle y_{i}=\beta _{0}+\beta _{1}x_{i1}+\cdots +\beta _{p}x_{ip}+\varepsilon _{i}=\mathbf {x} _{i}^{\mathsf {T}}{\boldsymbol {\beta }}+\varepsilon _{i},\qquad i=1,\ldots ,n,}
+
+where  denotes the transpose, so that xiβ is the inner product between vectors xi and β.
+
+Often these n equations are stacked together and written in matrix notation as
+
+where
+
+Fitting a linear model to a given data set usually requires estimating the regression coefficients 
+
+
+
+
+β
+
+
+
+{\displaystyle {\boldsymbol {\beta }}}
+
+ such that the error term 
+
+
+
+
+ε
+
+=
+
+y
+
+−
+
+X
+
+
+β
+
+
+
+{\displaystyle {\boldsymbol {\varepsilon }}=\mathbf {y} -\mathbf {X} {\boldsymbol {\beta }}}
+
+ is minimized. For example, it is common to use the sum of squared errors 
+
+
+
+‖
+
+ε
+
+
+‖
+
+2
+
+
+2
+
+
+
+
+{\displaystyle \|{\boldsymbol {\varepsilon }}\|_{2}^{2}}
+
+ as a measure of 
+
+
+
+
+ε
+
+
+
+{\displaystyle {\boldsymbol {\varepsilon }}}
+
+ for minimization.
+
+Consider a situation where a small ball is being tossed up in the air and then we measure its heights of ascent hi at various moments in time ti. Physics tells us that, ignoring the drag, the relationship can be modeled as
+
+where β1 determines the initial velocity of the ball, β2 is proportional to the standard gravity, and εi is due to measurement errors. Linear regression can be used to estimate the values of β1 and β2 from the measured data. This model is non-linear in the time variable, but it is linear in the parameters β1 and β2; if we take regressors xi = (xi1, xi2)  = (ti, ti), the model takes on the standard form
+
+When estimating the parameters of linear regression models with standard estimation techniques such as ordinary least squares, it is necessary to make a number of assumptions about the predictor variables, the response variable and their relationship, to get estimators that are unbiased in finite sample. Numerous extensions have been developed that allow each of these assumptions to be relaxed (reduced to a weaker form), and in some cases eliminated entirely. Generally these extensions require more data or modelling assumptions to produce an equally precise model.
+
+A fitted linear regression model can be used to identify the relationship between a single predictor variable xj and the response variable y when all the other predictor variables in the model are "held fixed". Specifically, the interpretation of βj is the expected change in y for a one-unit change in xj when the other covariates are held fixed—that is, the expected value of the partial derivative of y with respect to xj. This is sometimes called the unique effect of xj on y. In contrast, the marginal effect of xj on y can be assessed using a correlation coefficient or simple linear regression model relating only xj to y; this effect is the total derivative of y with respect to xj.
+
+Care must be taken when interpreting regression results, as some of the regressors may not allow for marginal changes (such as dummy variables, or the intercept term), while others cannot be held fixed (recall the example from the introduction: it would be impossible to "hold ti fixed" and at the same time change the value of ti).
+
+It is possible that the unique effect be nearly zero even when the marginal effect is large. This may imply that some other covariate captures all the information in xj, so that once that variable is in the model, there is no contribution of xj to the variation in y. Conversely, the unique effect of xj can be large while its marginal effect is nearly zero. This would happen if the other covariates explained a great deal of the variation of y, but they mainly explain variation in a way that is complementary to what is captured by xj. In this case, including the other variables in the model reduces the part of the variability of y that is unrelated to xj, thereby strengthening the apparent relationship with xj.
+
+The meaning of the expression "held fixed" may depend on how the values of the predictor variables arise. If the experimenter directly sets the values of the predictor variables according to a study design, the comparisons of interest may literally correspond to comparisons among units whose predictor variables have been "held fixed" by the experimenter. Alternatively, the expression "held fixed" can refer to a selection that takes place in the context of data analysis. In this case, we "hold a variable fixed" by restricting our attention to the subsets of the data that happen to have a common value for the given predictor variable. This is the only interpretation of "held fixed" that can be used in an observational study.
+
+The notion of a "unique effect" is appealing when studying a complex system where multiple interrelated components influence the response variable. In some cases, it can literally be interpreted as the causal effect of an intervention that is linked to the value of a predictor variable. However, it has been argued that in many cases multiple regression analysis fails to clarify the relationships between the predictor variables and the response variable when the predictors are correlated with each other and are not assigned following a study design.
+
+Numerous extensions of linear regression have been developed, which allow some or all of the assumptions underlying the basic model to be relaxed.
+
+The simplest case of a single scalar predictor variable x and a single scalar response variable y is known as simple linear regression. The extension to multiple and/or vector-valued predictor variables (denoted with a capital X) is known as multiple linear regression, also known as multivariable linear regression (not to be confused with multivariate linear regression).
+
+Multiple linear regression is a generalization of simple linear regression to the case of more than one independent variable, and a special case of general linear models, restricted to one dependent variable. The basic model for multiple linear regression is
+
+for each observation 
+
+
+
+i
+=
+1
+,
+…
+,
+n
+
+
+{\textstyle i=1,\ldots ,n}
+
+.
+
+In the formula above we consider n observations of one dependent variable and p independent variables. Thus, Yi is the i observation of the dependent variable, Xij is i observation of the j independent variable, j = 1, 2, ..., p. The values βj represent parameters to be estimated, and εi is the i independent identically distributed normal error.
+
+In the more general multivariate linear regression, there is one equation of the above form for each of m > 1 dependent variables that share the same set of explanatory variables and hence are estimated simultaneously with each other:
+
+for all observations indexed as i = 1, ... , n and for all dependent variables indexed as j = 1, ... , m.
+
+Nearly all real-world regression models involve multiple predictors, and basic descriptions of linear regression are often phrased in terms of the multiple regression model. Note, however, that in these cases the response variable y is still a scalar. Another term, multivariate linear regression, refers to cases where y is a vector, i.e., the same as general linear regression.
+
+The general linear model considers the situation when the response variable is not a scalar (for each observation) but a vector, yi. Conditional linearity of 
+
+
+
+E
+(
+
+y
+
+∣
+
+
+x
+
+
+i
+
+
+)
+=
+
+
+x
+
+
+i
+
+
+
+T
+
+
+
+B
+
+
+{\displaystyle E(\mathbf {y} \mid \mathbf {x} _{i})=\mathbf {x} _{i}^{\mathsf {T}}B}
+
+ is still assumed, with a matrix B replacing the vector β of the classical linear regression model. Multivariate analogues of ordinary least squares (OLS) and generalized least squares (GLS) have been developed. "General linear models" are also called "multivariate linear models". These are not the same as multivariable linear models (also called "multiple linear models").
+
+Various models have been created that allow for heteroscedasticity, i.e. the errors for different response variables may have different variances. For example, weighted least squares is a method for estimating linear regression models when the response variables may have different error variances, possibly with correlated errors. (See also Weighted linear least squares, and Generalized least squares.) Heteroscedasticity-consistent standard errors is an improved method for use with uncorrelated but potentially heteroscedastic errors.
+
+The Generalized linear model (GLM) is a framework for modeling response variables that are bounded or discrete. This is used, for example:
+
+Generalized linear models allow for an arbitrary link function, g, that relates the mean of the response variable(s) to the predictors: 
+
+
+
+E
+(
+Y
+)
+=
+
+g
+
+−
+1
+
+
+(
+X
+B
+)
+
+
+{\displaystyle E(Y)=g^{-1}(XB)}
+
+. The link function is often related to the distribution of the response, and in particular it typically has the effect of transforming between the 
+
+
+
+(
+−
+∞
+,
+∞
+)
+
+
+{\displaystyle (-\infty ,\infty )}
+
+ range of the linear predictor and the range of the response variable.
+
+Some common examples of GLMs are:
+
+Single index models allow some degree of nonlinearity in the relationship between x and y, while preserving the central role of the linear predictor β′x as in the classical linear regression model. Under certain conditions, simply applying OLS to data from a single-index model will consistently estimate β up to a proportionality constant.
+
+Hierarchical linear models (or multilevel regression) organizes the data into a hierarchy of regressions, for example where A is regressed on B, and B is regressed on C. It is often used where the variables of interest have a natural hierarchical structure such as in educational statistics, where students are nested in classrooms, classrooms are nested in schools, and schools are nested in some administrative grouping, such as a school district. The response variable might be a measure of student achievement such as a test score, and different covariates would be collected at the classroom, school, and school district levels.
+
+Errors-in-variables models (or "measurement error models") extend the traditional linear regression model to allow the predictor variables X to be observed with error. This error causes standard estimators of β to become biased. Generally, the form of bias is an attenuation, meaning that the effects are biased toward zero.
+
+In a multiple linear regression model
+
+parameter 
+
+
+
+
+β
+
+j
+
+
+
+
+{\displaystyle \beta _{j}}
+
+ of predictor variable 
+
+
+
+
+x
+
+j
+
+
+
+
+{\displaystyle x_{j}}
+
+ represents the individual effect of 
+
+
+
+
+x
+
+j
+
+
+
+
+{\displaystyle x_{j}}
+
+. It has an interpretation as the expected change in the response variable 
+
+
+
+y
+
+
+{\displaystyle y}
+
+ when 
+
+
+
+
+x
+
+j
+
+
+
+
+{\displaystyle x_{j}}
+
+ increases by one unit with other predictor variables held constant. When 
+
+
+
+
+x
+
+j
+
+
+
+
+{\displaystyle x_{j}}
+
+ is strongly correlated with other predictor variables, it is improbable that 
+
+
+
+
+x
+
+j
+
+
+
+
+{\displaystyle x_{j}}
+
+ can increase by one unit with other variables held constant. In this case, the interpretation of 
+
+
+
+
+β
+
+j
+
+
+
+
+{\displaystyle \beta _{j}}
+
+ becomes problematic as it is based on an improbable condition, and the effect of 
+
+
+
+
+x
+
+j
+
+
+
+
+{\displaystyle x_{j}}
+
+ cannot be evaluated in isolation.
+
+For a group of predictor variables, say, 
+
+
+
+{
+
+x
+
+1
+
+
+,
+
+x
+
+2
+
+
+,
+…
+,
+
+x
+
+q
+
+
+}
+
+
+{\displaystyle \{x_{1},x_{2},\dots ,x_{q}\}}
+
+, a group effect 
+
+
+
+ξ
+(
+
+w
+
+)
+
+
+{\displaystyle \xi (\mathbf {w} )}
+
+ is defined as a linear combination of their parameters
+
+where 
+
+
+
+
+w
+
+=
+(
+
+w
+
+1
+
+
+,
+
+w
+
+2
+
+
+,
+…
+,
+
+w
+
+q
+
+
+
+)
+
+⊺
+
+
+
+
+{\displaystyle \mathbf {w} =(w_{1},w_{2},\dots ,w_{q})^{\intercal }}
+
+ is a we

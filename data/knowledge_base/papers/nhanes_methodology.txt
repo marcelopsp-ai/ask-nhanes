@@ -1,0 +1,56 @@
+# NHANES Methodology and Design
+
+Source: CDC/NCHS Documentation
+
+## Survey Design
+
+The National Health and Nutrition Examination Survey (NHANES) is a program of studies 
+designed to assess the health and nutritional status of adults and children in the 
+United States.
+
+### Key Features:
+- Cross-sectional survey design
+- Nationally representative sample
+- Combines interviews and physical examinations
+- Conducted by NCHS (National Center for Health Statistics)
+- Part of CDC (Centers for Disease Control and Prevention)
+
+## Sampling Strategy
+
+NHANES uses a complex, multistage probability sampling design:
+
+1. **Primary Sampling Units (PSUs)**: Counties or groups of counties
+2. **Segments**: Census blocks or combinations
+3. **Households**: Dwelling units within segments
+4. **Individuals**: Persons within households
+
+### Oversampling
+Certain subgroups are oversampled to increase precision:
+- Hispanic persons
+- Non-Hispanic Black persons
+- Non-Hispanic Asian persons
+- Older adults (60+ years)
+- Low-income white persons
+
+## Data Collection
+
+### Interview Component
+- Demographic information
+- Socioeconomic status
+- Dietary intake (24-hour recall)
+- Health-related questions
+
+### Examination Component
+- Body measurements (height, weight, waist circumference)
+- Blood pressure
+- Dental examination
+- Laboratory tests (blood, urine)
+
+## Survey Weights
+
+NHANES provides sample weights to:
+- Account for unequal probability of selection
+- Adjust for nonresponse
+- Post-stratify to population totals
+
+**Important**: Always use sample weights for nationally representative estimates!

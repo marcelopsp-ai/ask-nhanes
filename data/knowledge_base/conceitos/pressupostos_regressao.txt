@@ -1,0 +1,34 @@
+# Pressupostos da Regressão Linear
+
+Source: Econometria e Bioestatística
+
+## Os 5 Pressupostos
+
+### 1. Linearidade
+- Relação entre X e Y é linear
+- Verificar: Gráfico de dispersão
+
+### 2. Independência
+- Observações são independentes
+- Verificar: Durbin-Watson (ideal ≈ 2.0)
+
+### 3. Normalidade
+- Resíduos seguem distribuição normal
+- Verificar: Shapiro-Wilk, Q-Q Plot
+
+### 4. Homoscedasticidade
+- Variância constante dos resíduos
+- Verificar: Breusch-Pagan
+
+### 5. Ausência de Multicolinearidade
+- Variáveis independentes não correlacionadas
+- Verificar: VIF < 5
+
+## Testes Diagnósticos
+
+| Pressuposto | Teste | Bom resultado |
+|-------------|-------|---------------|
+| Independência | Durbin-Watson | DW ≈ 2.0 |
+| Normalidade | Shapiro-Wilk | p > 0.05 |
+| Homoscedasticidade | Breusch-Pagan | p > 0.05 |
+| Multicolinearidade | VIF | VIF < 5 |

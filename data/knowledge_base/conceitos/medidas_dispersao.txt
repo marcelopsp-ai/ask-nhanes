@@ -1,0 +1,38 @@
+# Medidas de Dispersão
+
+Source: Estatística Descritiva
+
+## Definição
+Medidas que indicam o quanto os dados estão "espalhados".
+
+## Principais Medidas
+
+### 1. Amplitude
+- Diferença entre máximo e mínimo
+- Muito sensível a outliers
+
+### 2. Variância (σ²)
+- Média dos desvios quadráticos
+- Amostral: s² = Σ(xᵢ - x̄)² / (n-1)
+
+### 3. Desvio Padrão (σ ou s)
+- Raiz quadrada da variância
+- Mesma unidade dos dados
+- ~68% dentro de ±1σ (normal)
+- ~95% dentro de ±2σ (normal)
+
+### 4. Coeficiente de Variação (CV)
+- CV = (s / x̄) × 100%
+- CV < 15%: Baixa variabilidade
+- CV > 30%: Alta variabilidade
+
+### 5. Intervalo Interquartil (IQR)
+- IQR = Q3 - Q1
+- Contém 50% dos dados centrais
+- Robusto a outliers
+
+## Identificação de Outliers
+
+Regra do IQR:
+- Limite inferior: Q1 - 1.5 × IQR
+- Limite superior: Q3 + 1.5 × IQR

@@ -1,0 +1,15 @@
+# ===== ETAPA 1: Knowledge Base Builder =====
+pandas==2.2.0
+requests==2.31.0
+beautifulsoup4==4.12.3
+lxml==5.1.0
+
+# ===== ETAPA 2: RAG Pipeline (depois) =====
+# langchain==0.1.0
+# chromadb==0.4.22
+# sentence-transformers==2.3.1
+
+# ===== ETAPA 3: LLM + API (depois) =====
+# google-generativeai==0.3.2
+# fastapi==0.109.0
+# uvicorn[standard]==0.27.0

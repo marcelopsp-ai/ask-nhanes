@@ -1,0 +1,23 @@
+# IMC por Faixa Etária - NHANES 2015-2016
+
+Source: data/raw/nhanes_2015_2016.csv
+
+## Estatísticas por Grupo
+
+| Faixa Etária | N | Média | Mediana | DP |
+|--------------|---|-------|---------|-----|
+| 18-29 | 1,049 | 27.67 | 26.20 | 7.31 |
+| 30-44 | 1,378 | 30.09 | 28.80 | 7.51 |
+| 45-59 | 1,332 | 30.15 | 29.10 | 6.94 |
+| 60+ | 1,772 | 29.49 | 28.60 | 6.50 |
+
+## Interpretação
+
+A faixa etária **45-59 anos** apresenta o maior IMC médio, 
+classificado como **obesidade** segundo a OMS (IMC ≥ 30).
+
+### Classificação OMS do IMC
+- < 18.5: Baixo peso
+- 18.5 - 24.9: Normal
+- 25.0 - 29.9: Sobrepeso
+- ≥ 30.0: Obesidade

@@ -1,0 +1,42 @@
+# Interpretação de Resultados de Regressão
+
+Source: Análise de Dados
+
+## Bloco 1: Performance Geral
+
+### R² (R-squared)
+- Proporção da variância explicada
+- 0 a 1 (0% a 100%)
+
+### R² Ajustado
+- Penaliza adição de variáveis
+- Se R² ≈ R² ajustado: OK
+
+### F-statistic
+- Testa utilidade do modelo
+- p < 0.05: Modelo é útil
+
+## Bloco 2: Coeficientes
+
+### Intercepto (β₀)
+- Valor de Y quando todos X = 0
+
+### Coeficientes (βᵢ)
+- Mudança em Y para cada 1 unidade em Xᵢ
+
+### P-valor
+- p < 0.05: Significativo
+- p < 0.001: Altamente significativo
+
+## Bloco 3: Diagnóstico
+
+### Durbin-Watson
+- Ideal: ≈ 2.0
+- < 1.5 ou > 2.5: Problema
+
+### Omnibus / Jarque-Bera
+- p > 0.05: Resíduos normais
+
+### Skew / Kurtosis
+- Skew = 0: Simétrico
+- Kurtosis = 3: Normal

@@ -1,0 +1,15 @@
+Source: https://en.wikipedia.org/wiki/National_Health_and_Nutrition_Examination_Survey
+Topic: National Health and Nutrition Examination Survey
+
+The National Health and Nutrition Examination Survey (NHANES) is a survey research program conducted by the National Center for Health Statistics (NCHS) to assess the health and nutritional status of adults and children in the United States, and to track changes over time. The survey combines interviews, physical examinations and laboratory tests.
+
+The NHANES interview includes demographic, socioeconomic, dietary, and health-related questions. The examination component consists of medical, dental, and physiological measurements, as well as laboratory tests administered by medical personnel.
+
+The National Health Survey Act was passed in 1956. This allowed legislative authorization to provide current statistical data on the amount, distribution, and effects on illness and disability in the United States.
+
+The first three national health examination surveys were conducted in the 1960s:
+
+The first NHANES was conducted in 1971, and in 1999 the surveys became an annual event; the first report on the topic was published in 2001.
+
+NHANES findings are used to determine the prevalence of major diseases and risk factors for diseases. Information is used to assess nutritional status and its association with health promotion and disease prevention. NHANES findings are also the basis for national standards for such measurements as height, weight, and blood pressure. NHANES data are used in epidemiological studies and health sciences research (including biomarkers of aging), which help develop sound public health policy, direct and design health programs and services, expand health knowledge, extend healthspan and lifespan.
+Follow-up studies using NHANES data were made possible by creating linked mortality files and files based on Medicare and Medicaid data.

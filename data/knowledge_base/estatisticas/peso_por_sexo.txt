@@ -1,0 +1,10 @@
+# Peso por Sexo - NHANES 2015-2016
+
+Source: data/raw/nhanes_2015_2016.csv
+
+## Estatísticas por Sexo
+
+| Sexo | N | Média (kg) | Mediana (kg) | DP |
+|------|---|------------|--------------|-----|
+| Feminino | 2,947 | 76.52 | 72.50 | 21.25 |
+| Masculino | 2,719 | 86.57 | 82.80 | 21.10 |

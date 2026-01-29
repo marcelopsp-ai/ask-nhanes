@@ -1,0 +1,24 @@
+# Matriz de Correlação - NHANES 2015-2016
+
+Source: data/raw/nhanes_2015_2016.csv
+
+## Correlações de Pearson
+
+|  | Idade | Altura | Peso | IMC |
+|--|-------|--------|------|-----|
+| Idade | 1.000 | -0.145 | -0.010 | 0.060 |
+| Altura | -0.145 | 1.000 | 0.431 | -0.026 |
+| Peso | -0.010 | 0.431 | 1.000 | 0.884 |
+| IMC | 0.060 | -0.026 | 0.884 | 1.000 |
+
+## Interpretação
+
+### Correlações Fortes (|r| > 0.5)
+- **Peso × IMC**: Muito forte (esperado)
+- **Altura × Peso**: Moderada a forte
+
+### Classificação de Cohen
+- |r| < 0.1: Desprezível
+- |r| 0.1 - 0.3: Fraca
+- |r| 0.3 - 0.5: Moderada
+- |r| > 0.5: Forte

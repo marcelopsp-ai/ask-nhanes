@@ -1,0 +1,46 @@
+# Obesity Prevalence in the United States
+
+Source: CDC NCHS Data Briefs + Academic Literature
+
+## Current Statistics (NHANES Data)
+
+### Adult Obesity (Age 20+)
+- Overall prevalence: ~42.4%
+- Severe obesity (BMI ≥40): ~9.2%
+- Trend: Increasing since 1999-2000
+
+### By Sex
+- Men: ~43.0%
+- Women: ~41.9%
+
+### By Age Group
+- 20-39 years: ~40.0%
+- 40-59 years: ~44.8% (highest)
+- 60+ years: ~42.8%
+
+### By Race/Ethnicity
+- Non-Hispanic Black: ~49.6%
+- Hispanic: ~44.8%
+- Non-Hispanic White: ~42.2%
+- Non-Hispanic Asian: ~17.4%
+
+## BMI Classification (WHO)
+
+| Category | BMI Range |
+|----------|-----------|
+| Underweight | < 18.5 |
+| Normal | 18.5 - 24.9 |
+| Overweight | 25.0 - 29.9 |
+| Obesity Class I | 30.0 - 34.9 |
+| Obesity Class II | 35.0 - 39.9 |
+| Obesity Class III | ≥ 40.0 |
+
+## Health Consequences
+
+Obesity increases risk for:
+- Type 2 diabetes
+- Cardiovascular disease
+- Hypertension
+- Certain cancers
+- Sleep apnea
+- Osteoarthritis

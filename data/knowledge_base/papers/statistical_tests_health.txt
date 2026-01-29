@@ -1,0 +1,48 @@
+# Statistical Tests in Health Research
+
+Source: Biostatistics Textbooks
+
+## Choosing the Right Test
+
+### For Comparing Groups
+
+| Comparison | Parametric | Non-Parametric |
+|------------|------------|----------------|
+| 2 groups (independent) | t-test | Mann-Whitney U |
+| 2 groups (paired) | Paired t-test | Wilcoxon signed-rank |
+| 3+ groups | ANOVA | Kruskal-Wallis |
+
+### For Relationships
+
+| Variables | Test |
+|-----------|------|
+| 2 continuous | Pearson correlation |
+| 2 continuous (non-normal) | Spearman correlation |
+| Continuous + Categorical | t-test / ANOVA |
+| 2 categorical | Chi-square |
+
+## Tests Used in NHANES Analysis
+
+### 1. Shapiro-Wilk (Normality)
+- H₀: Data is normally distributed
+- p > 0.05 → Assume normality
+
+### 2. Independent t-test
+- Compares means of 2 groups
+- Example: Weight by Sex
+
+### 3. Mann-Whitney U
+- Non-parametric alternative to t-test
+- Uses ranks instead of raw values
+
+### 4. ANOVA
+- Compares means of 3+ groups
+- F-statistic = Between/Within variance
+
+### 5. Pearson Correlation
+- Measures linear relationship
+- r = -1 to +1
+
+### 6. Breusch-Pagan
+- Tests homoscedasticity
+- p > 0.05 = Constant variance

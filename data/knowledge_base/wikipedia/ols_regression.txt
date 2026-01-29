@@ -1,0 +1,1030 @@
+Source: https://en.wikipedia.org/wiki/Ordinary_least_squares
+Topic: Ordinary least squares
+
+In statistics, ordinary least squares (OLS) is a type of linear least squares method for choosing the unknown parameters in a linear regression model (with fixed level-one effects of a linear function of a set of explanatory variables) by the principle of least squares: minimizing the sum of the squares of the differences between the observed dependent variable (values of the variable being observed) in the input dataset and the output of the (linear) function of the independent variable. Some sources consider OLS to be linear regression.
+
+Geometrically, this is seen as the sum of the squared distances, parallel to the axis of the dependent variable, between each data point in the set and the corresponding point on the regression surface—the smaller the differences, the better the model fits the data. The resulting estimator can be expressed by a simple formula, especially in the case of a simple linear regression, in which there is a single regressor on the right side of the regression equation.
+
+The OLS estimator is consistent for the level-one fixed effects when the regressors are exogenous and forms perfect colinearity (rank condition), consistent for the variance estimate of the residuals when regressors have finite fourth moments and—by the Gauss–Markov theorem—optimal in the class of linear unbiased estimators when the errors are homoscedastic and serially uncorrelated. Under these conditions, the method of OLS provides minimum-variance mean-unbiased estimation when the errors have finite variances. Under the additional assumption that the errors are normally distributed with zero mean, OLS is the maximum likelihood estimator that outperforms any non-linear unbiased estimator.
+
+Suppose the data consists of 
+
+
+
+n
+
+
+{\displaystyle n}
+
+ observations 
+
+
+
+
+
+{
+
+
+
+x
+
+
+i
+
+
+,
+
+y
+
+i
+
+
+
+}
+
+
+i
+=
+1
+
+
+n
+
+
+
+
+{\displaystyle \left\{\mathbf {x} _{i},y_{i}\right\}_{i=1}^{n}}
+
+. Each observation 
+
+
+
+i
+
+
+{\displaystyle i}
+
+ includes a scalar response 
+
+
+
+
+y
+
+i
+
+
+
+
+{\displaystyle y_{i}}
+
+ and a column vector 
+
+
+
+
+
+x
+
+
+i
+
+
+
+
+{\displaystyle \mathbf {x} _{i}}
+
+ of 
+
+
+
+p
+
+
+{\displaystyle p}
+
+ parameters (regressors), i.e., 
+
+
+
+
+
+x
+
+
+i
+
+
+=
+
+
+[
+
+
+x
+
+i
+1
+
+
+,
+
+x
+
+i
+2
+
+
+,
+…
+,
+
+x
+
+i
+p
+
+
+
+]
+
+
+T
+
+
+
+
+{\displaystyle \mathbf {x} _{i}=\left[x_{i1},x_{i2},\dots ,x_{ip}\right]^{\operatorname {T} }}
+
+. In a linear regression model, the response variable, 
+
+
+
+
+y
+
+i
+
+
+
+
+{\displaystyle y_{i}}
+
+, is a linear function of the regressors:
+
+or in vector form,
+
+where 
+
+
+
+
+
+x
+
+
+i
+
+
+
+
+{\displaystyle \mathbf {x} _{i}}
+
+, as introduced previously, is a column vector of the 
+
+
+
+i
+
+
+{\displaystyle i}
+
+-th observation of all the explanatory variables; 
+
+
+
+
+β
+
+
+
+{\displaystyle {\boldsymbol {\beta }}}
+
+ is a 
+
+
+
+p
+×
+1
+
+
+{\displaystyle p\times 1}
+
+ vector of unknown parameters; and the scalar 
+
+
+
+
+ε
+
+i
+
+
+
+
+{\displaystyle \varepsilon _{i}}
+
+ represents unobserved random variables (errors) of the 
+
+
+
+i
+
+
+{\displaystyle i}
+
+-th observation. 
+
+
+
+
+ε
+
+i
+
+
+
+
+{\displaystyle \varepsilon _{i}}
+
+ accounts for the influences upon the responses 
+
+
+
+
+y
+
+i
+
+
+
+
+{\displaystyle y_{i}}
+
+ from sources other than the explanatory variables 
+
+
+
+
+
+x
+
+
+i
+
+
+
+
+{\displaystyle \mathbf {x} _{i}}
+
+. This model can also be written in matrix notation as
+
+where 
+
+
+
+
+y
+
+
+
+{\displaystyle \mathbf {y} }
+
+ and 
+
+
+
+
+ε
+
+
+
+{\displaystyle {\boldsymbol {\varepsilon }}}
+
+ are 
+
+
+
+n
+×
+1
+
+
+{\displaystyle n\times 1}
+
+ vectors of the response variables and the errors of the 
+
+
+
+n
+
+
+{\displaystyle n}
+
+ observations, and 
+
+
+
+
+X
+
+
+
+{\displaystyle \mathbf {X} }
+
+ is an 
+
+
+
+n
+×
+p
+
+
+{\displaystyle n\times p}
+
+ matrix of regressors, also sometimes called the design matrix, whose row 
+
+
+
+i
+
+
+{\displaystyle i}
+
+ is 
+
+
+
+
+
+x
+
+
+i
+
+
+T
+
+
+
+
+{\displaystyle \mathbf {x} _{i}^{\operatorname {T} }}
+
+ and contains the 
+
+
+
+i
+
+
+{\displaystyle i}
+
+-th observations on all the explanatory variables.
+
+Typically, a constant term is included in the set of regressors 
+
+
+
+
+X
+
+
+
+{\displaystyle \mathbf {X} }
+
+, say, by taking 
+
+
+
+
+x
+
+i
+1
+
+
+=
+1
+
+
+{\displaystyle x_{i1}=1}
+
+ for all 
+
+
+
+i
+=
+1
+,
+…
+,
+n
+
+
+{\displaystyle i=1,\dots ,n}
+
+. The coefficient 
+
+
+
+
+β
+
+1
+
+
+
+
+{\displaystyle \beta _{1}}
+
+ corresponding to this regressor is called the intercept. Without the intercept, the fitted line is forced to cross the origin when 
+
+
+
+
+x
+
+i
+
+
+=
+
+
+
+0
+→
+
+
+
+
+
+{\displaystyle x_{i}={\vec {0}}}
+
+.
+
+Regressors do not have to be independent for estimation to be consistent e.g. they may be non-linearly dependent. Short of perfect multicollinearity, parameter estimates may still be consistent; however, as multicollinearity rises the standard error around such estimates increases and reduces the precision of such estimates. When there is perfect multicollinearity, it is no longer possible to obtain unique estimates for the coefficients to the related regressors; estimation for these parameters cannot converge (thus, it cannot be consistent).
+
+As a concrete example where regressors are non-linearly dependent yet estimation may still be consistent, we might suspect the response depends linearly both on a value and its square; in which case we would include one regressor whose value is just the square of another regressor. In that case, the model would be quadratic in the second regressor, but none-the-less is still considered a linear model because the model is still linear in the parameters (
+
+
+
+
+β
+
+
+
+{\displaystyle {\boldsymbol {\beta }}}
+
+).
+
+Consider an overdetermined system
+
+of 
+
+
+
+n
+
+
+{\displaystyle n}
+
+ linear equations in 
+
+
+
+p
+
+
+{\displaystyle p}
+
+ unknown coefficients, 
+
+
+
+
+β
+
+1
+
+
+,
+
+β
+
+2
+
+
+,
+…
+,
+
+β
+
+p
+
+
+
+
+{\displaystyle \beta _{1},\beta _{2},\dots ,\beta _{p}}
+
+, with 
+
+
+
+n
+>
+p
+
+
+{\displaystyle n>p}
+
+. This can be written in matrix form as
+
+where
+
+(Note: for a linear model as above, not all elements in 
+
+
+
+
+X
+
+
+
+{\displaystyle \mathbf {X} }
+
+ contains information on the data points. The first column is populated with ones, 
+
+
+
+
+X
+
+i
+1
+
+
+=
+1
+
+
+{\displaystyle X_{i1}=1}
+
+. Only the other columns contain actual data. So here 
+
+
+
+p
+
+
+{\displaystyle p}
+
+ is equal to the number of regressors plus one).
+
+Such a system usually has no exact solution, so the goal is instead to find the coefficients 
+
+
+
+
+β
+
+
+
+{\displaystyle {\boldsymbol {\beta }}}
+
+ which fit the equations "best", in the sense of solving the quadratic minimization problem
+
+where the objective function 
+
+
+
+S
+
+
+{\displaystyle S}
+
+ is given by
+
+A justification for choosing this criterion is given in Properties below. This minimization problem has a unique solution, provided that the 
+
+
+
+p
+
+
+{\displaystyle p}
+
+ columns of the matrix 
+
+
+
+
+X
+
+
+
+{\displaystyle \mathbf {X} }
+
+ are linearly independent, given by solving the so-called normal equations:
+
+The matrix 
+
+
+
+
+
+X
+
+
+T
+
+
+
+X
+
+
+
+{\displaystyle \mathbf {X} ^{\operatorname {T} }\mathbf {X} }
+
+ is known as the normal matrix or Gram matrix and the matrix 
+
+
+
+
+
+X
+
+
+T
+
+
+
+y
+
+
+
+{\displaystyle \mathbf {X} ^{\operatorname {T} }\mathbf {y} }
+
+ is known as the moment matrix of regressand by regressors. Finally, 
+
+
+
+
+
+
+β
+^
+
+
+
+
+
+{\displaystyle {\hat {\boldsymbol {\beta }}}}
+
+ is the coefficient vector of the least-squares hyperplane, expressed as
+
+or
+
+Suppose b is a "candidate" value for the parameter vector β. The quantity yi − xib, called the residual for the i-th observation, measures the vertical distance between the data point (xi, yi) and the hyperplane y = xb, and thus assesses the degree of fit between the actual data and the model. The sum of squared residuals (SSR) (also called the error sum of squares (ESS) or residual sum of squares (RSS)) is a measure of the overall model fit:
+
+where T denotes the matrix transpose, and the rows of X, denoting the values of all the independent variables associated with a particular value of the dependent variable, are Xi = xi.  The value of b which minimizes this sum is called the OLS estimator for β. The function S(b) is quadratic in b with positive-definite Hessian, and therefore this function possesses a unique global minimum at 
+
+
+
+b
+=
+
+
+
+β
+^
+
+
+
+
+
+{\displaystyle b={\hat {\beta }}}
+
+, which can be given by the explicit formula
+
+The product N = X X is a Gram matrix, and its inverse, Q = N, is the cofactor matrix of β, closely related to its covariance matrix, Cβ.
+The matrix (X X) X = Q X is called the Moore–Penrose pseudoinverse matrix of X. This formulation highlights the point that estimation can be carried out if, and only if, there is no perfect multicollinearity between the explanatory variables (which would cause the Gram matrix to have no inverse).
+
+After we have estimated β, the fitted values (or predicted values) from the regression will be
+
+where P = X(XX)X is the projection matrix onto the space V spanned by the columns of X. This matrix P is also sometimes called the hat matrix because it "puts a hat" onto the variable y. Another matrix, closely related to P is the annihilator matrix M = In − P; this is a projection matrix onto the space orthogonal to V. Both matrices P and M are symmetric and idempotent (meaning that P = P and M = M), and relate to the data matrix X via identities PX = X and MX = 0. Matrix M creates the residuals from the regression:
+
+The variances of the predicted values 
+
+
+
+
+s
+
+
+
+
+
+y
+^
+
+
+
+
+i
+
+
+
+
+2
+
+
+
+
+{\displaystyle s_{{\hat {y}}_{i}}^{2}}
+
+ are found in the main diagonal of the variance-covariance matrix of predicted values:
+
+where P is the projection matrix and s is the sample variance.
+The full matrix is very large; its diagonal elements can be calculated individually as:
+
+where Xi is the i-th row of matrix X.
+
+Using these residuals we can estimate the sample variance s using the reduced chi-squared statistic:
+
+The denominator, n−p, is the statistical degrees of freedom. The first quantity, s, is the OLS estimate for σ, whereas the second, 
+
+
+
+
+
+
+
+
+σ
+^
+
+
+
+
+2
+
+
+
+
+
+{\displaystyle \scriptstyle {\hat {\sigma }}^{2}}
+
+, is the MLE estimate for σ. The two estimators are quite similar in large samples; the first estimator is always unbiased, while the second estimator is biased but has a smaller mean squared error. In practice s is used more often, since it is more convenient for the hypothesis testing. The square root of s is called the regression standard error, standard error of the regression, or standard error of the equation.
+
+It is common to assess the goodness-of-fit of the OLS regression by comparing how much the initial variation in the sample can be reduced by regressing onto X. The coefficient of determination R is defined as a ratio of "explained" variance to the "total" variance of the dependent variable y, in the cases where the regression sum of squares equals the sum of squares of residuals:
+
+where TSS is the total sum of squares for the dependent variable, 
+
+
+
+L
+=
+
+I
+
+n
+
+
+−
+
+
+1
+n
+
+
+
+J
+
+n
+
+
+
+
+{\textstyle L=I_{n}-{\frac {1}{n}}J_{n}}
+
+, and 
+
+
+
+
+J
+
+n
+
+
+
+
+{\textstyle J_{n}}
+
+ is an n×n matrix of ones. (
+
+
+
+L
+
+
+{\displaystyle L}
+
+ is a centering matrix which is equivalent to regression on a constant; it simply subtracts the mean from a variable.) In order for R to be meaningful, the matrix X of data on regressors must contain a column vector of ones to represent the constant whose coefficient is the regression intercept. In that case, R will always be a number between 0 and 1, with values close to 1 indicating a good degree of fit.
+
+If the data matrix X contains only two variables, a constant and a scalar regressor xi, then this is called the "simple regression model". This case is often considered in the beginner statistics classes, as it provides much simpler formulas even suitable for manual calculation. The parameters are commonly denoted as (α, β):
+
+The least squares estimates in this case are given by simple formulas
+
+In the previous section the least squares estimator 
+
+
+
+
+
+
+β
+^
+
+
+
+
+
+{\displaystyle {\hat {\beta }}}
+
+ was obtained as a value that minimizes the sum of squared residuals of the model. However it is also possible to derive the same estimator from other approaches. In all cases the formula for OLS estimator remains the same: β = (XX)Xy; the only difference is in how we interpret this result.
+
+For mathematicians, OLS is an approximate solution to an overdetermined system of linear equations Xβ ≈ y, where β is the unknown. Assuming the system cannot be solved exactly (the number of equations n is much larger than the number of unknowns p), we are looking for a solution that could provide the smallest discrepancy between the right- and left- hand sides. In other words, we are looking for the solution that satisfies
+
+where ‖·‖ is the standard L norm in the n-dimensional Euclidean space R. The predicted quantity Xβ is just a certain linear combination of the vectors of regressors. Thus, the residual vector y − Xβ will have the smallest length when y is projected orthogonally onto the linear subspace spanned by the columns of X. The OLS estimator 
+
+
+
+
+
+
+β
+^
+
+
+
+
+
+{\displaystyle {\hat {\beta }}}
+
+ in this case can be interpreted as the coefficients of vector decomposition of y = Py along the basis of X.
+
+In other words, the gradient equations at the minimum can be written as:
+
+A geometrical interpretation of these equations is that the vector of residuals, 
+
+
+
+
+y
+
+−
+X
+
+
+
+β
+^
+
+
+
+
+
+{\displaystyle \mathbf {y} -X{\hat {\boldsymbol {\beta }}}}
+
+ is orthogonal to the column space of X, since the dot product 
+
+
+
+(
+
+y
+
+−
+
+X
+
+
+
+
+β
+^
+
+
+
+)
+⋅
+
+X
+
+
+v
+
+
+
+{\displaystyle (\mathbf {y} -\mathbf {X} {\hat {\boldsymbol {\beta }}})\cdot \mathbf {X} \mathbf {v} }
+
+ is equal to zero for any conformal vector, v. This means that 
+
+
+
+
+y
+
+−
+
+X
+
+
+
+
+β
+^
+
+
+
+
+
+{\displaystyle \mathbf {y} -\mathbf {X} {\boldsymbol {\hat {\beta }}}}
+
+ is the shortest of all possible vectors 
+
+
+
+
+y
+
+−
+
+X
+
+
+β
+
+
+
+{\displaystyle \mathbf {y} -\mathbf {X} {\boldsymbol {\beta }}}
+
+, that is, the variance of the residuals is the minimum possible. This is illustrated at the right.
+
+Introducing 
+
+
+
+
+
+
+γ
+^
+
+
+
+
+
+{\displaystyle {\hat {\boldsymbol {\gamma }}}}
+
+ and a matrix K with the assumption that a matrix 
+
+
+
+[
+
+X
+
+ 
+
+K
+
+]
+
+
+{\displaystyle [\mathbf {X} \ \mathbf {K} ]}
+
+ is non-singular and K X = 0 (cf. Orthogonal projections), the residual vector should satisfy the following equation:
+
+The equation and solution of linear least squares are thus described as follows:
+
+Another way of looking at it is to consider the regression line to be a weighted average of the lines passing through the combination of any two points in the dataset. Although this way of calculation is more computationally expensive, it provides a better intuition on OLS.
+
+The OLS estimator is identical to the maximum likelihood estimator (MLE) under the normality assumption for the error terms. This normality assumption has historical importance, as it provided the basis for the early work in linear regression analysis by Yule and Pearson. From the properties of MLE, we can infer that the OLS estimator is asymptotically efficient (in the sense of attaining the Cramér–Rao bound for variance) if the normality assumption is satisfied.
+
+In iid case the OLS estimator can a

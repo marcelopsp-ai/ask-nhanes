@@ -1,0 +1,36 @@
+# Regression Analysis in Health Studies
+
+Source: Biostatistics and Epidemiology Literature
+
+## Why Regression in Health Research?
+
+Regression analysis allows researchers to:
+- Identify risk factors for diseases
+- Quantify relationships between variables
+- Control for confounding variables
+- Make predictions about health outcomes
+
+## Linear Regression in NHANES
+
+### Common Applications
+
+1. **BMI Prediction**
+   - Predictors: Age, sex, diet, physical activity
+   - Model: BMI = β₀ + β₁(Age) + β₂(Sex) + ...
+
+2. **Blood Pressure Studies**
+   - Predictors: BMI, sodium intake, age, smoking
+   - Outcome: Systolic/Diastolic BP
+
+### Key Assumptions
+
+1. **Linearity**: Relationship between X and Y is linear
+2. **Independence**: Observations are independent
+3. **Normality**: Residuals are normally distributed
+4. **Homoscedasticity**: Constant variance of residuals
+
+### Interpreting Results
+
+- R² = Proportion of variance explained
+- β = Change in Y for 1-unit change in X
+- p < 0.05 = Statistically significant
