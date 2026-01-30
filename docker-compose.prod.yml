@@ -1,0 +1,39 @@
+# Docker Compose - PROD Environment
+version: '3.8'
+
+services:
+  ask-nhanes-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    container_name: ask-nhanes-prod
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=prod
+      - DEBUG=false
+      - API_RELOAD=false
+      - API_WORKERS=4
+      - LOG_LEVEL=WARNING
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    volumes:
+      # Apenas dados persistentes
+      - chroma_data:/app/data/chroma_db
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 4G
+        reservations:
+          cpus: '1'
+          memory: 2G
+
+volumes:
+  chroma_data:

@@ -1,0 +1,31 @@
+# Docker Compose - DEV Environment
+version: '3.8'
+
+services:
+  ask-nhanes-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: ask-nhanes-dev
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=dev
+      - DEBUG=true
+      - API_RELOAD=true
+      - LOG_LEVEL=DEBUG
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    volumes:
+      # Hot reload - monta código local
+      - ./src:/app/src
+      - ./data/knowledge_base:/app/data/knowledge_base
+      - ./data/chroma_db:/app/data/chroma_db
+      - ./ask_nhanes.py:/app/ask_nhanes.py
+      - ./start_api.py:/app/start_api.py
+    restart: unless-stopped
+    
+  # Opcional: Adminer para debug
+  # adminer:
+  #   image: adminer
+  #   ports:
+  #     - "8080:8080"
