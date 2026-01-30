@@ -1,33 +1,66 @@
 """
-Embeddings - HuggingFace Sentence Transformers (FREE)
+Embeddings usando Google Gemini API
+SEM PyTorch - imagem Docker muito menor!
 """
 
-from langchain_community.embeddings import HuggingFaceEmbeddings
+import os
+import google.generativeai as genai
+from typing import List
+
+
+class GeminiEmbeddings:
+    """Embeddings via Gemini API (gratuito)"""
+    
+    def __init__(self):
+        api_key = os.getenv("GEMINI_API_KEY")
+        if not api_key:
+            raise ValueError("GEMINI_API_KEY não configurada")
+        
+        genai.configure(api_key=api_key)
+        self.model = "models/embedding-001"
+        print(f"✅ Gemini Embeddings: {self.model}")
+    
+    def embed_documents(self, texts: List[str]) -> List[List[float]]:
+        """Gera embeddings para documentos"""
+        embeddings = []
+        for text in texts:
+            text = text[:2000] if len(text) > 2000 else text
+            try:
+                result = genai.embed_content(
+                    model=self.model,
+                    content=text,
+                    task_type="retrieval_document"
+                )
+                embeddings.append(result['embedding'])
+            except Exception as e:
+                print(f"⚠️ Embed error: {e}")
+                embeddings.append([0.0] * 768)  # fallback
+        return embeddings
+    
+    def embed_query(self, text: str) -> List[float]:
+        """Gera embedding para query"""
+        text = text[:2000] if len(text) > 2000 else text
+        result = genai.embed_content(
+            model=self.model,
+            content=text,
+            task_type="retrieval_query"
+        )
+        return result['embedding']
 
 
 class EmbeddingService:
-    """Serviço de embeddings usando HuggingFace (gratuito)"""
+    """Wrapper para compatibilidade"""
     
-    def __init__(self, model_name: str = "all-MiniLM-L6-v2"):
-        print(f"⏳ Loading embedding model: {model_name}")
-        self.embeddings = HuggingFaceEmbeddings(
-            model_name=model_name,
-            model_kwargs={'device': 'cpu'},
-            encode_kwargs={'normalize_embeddings': True}
-        )
-        print(f"✅ Embedding model loaded")
+    def __init__(self, model_name: str = None):
+        print("⏳ Initializing Gemini Embeddings...")
+        self.embeddings = GeminiEmbeddings()
     
     def get_embeddings(self):
-        """Retorna o objeto de embeddings para uso no ChromaDB"""
         return self.embeddings
 
 
 if __name__ == "__main__":
     service = EmbeddingService()
-    embeddings = service.get_embeddings()
-    
-    # Testar
-    test_text = "O que é IMC?"
-    vector = embeddings.embed_query(test_text)
-    print(f"Vector dimension: {len(vector)}")
-    print(f"First 5 values: {vector[:5]}")
+    emb = service.get_embeddings()
+    vec = emb.embed_query("O que é IMC?")
+    print(f"Dimension: {len(vec)}")

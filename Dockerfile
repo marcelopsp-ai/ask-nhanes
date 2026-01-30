@@ -1,25 +1,30 @@
-# ASK NHANES - Dockerfile
-FROM python:3.12-slim
+# ASK NHANES - Dockerfile LITE (~500MB)
+FROM python:3.11-slim
 
 WORKDIR /app
 
-# Instalar dependências do sistema
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1
 
-# Copiar requirements e instalar
+# Dependências mínimas
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get clean
+
+# Install Python packages
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copiar código
 COPY src/ ./src/
 COPY data/knowledge_base/ ./data/knowledge_base/
-COPY ask_nhanes.py .
-COPY start_api.py .
+COPY ask_nhanes.py start_api.py ./
 
-# Expor porta
+# Criar diretório para chroma
+RUN mkdir -p data/chroma_db
+
 EXPOSE 8000
 
-# Comando padrão
-CMD ["python3", "start_api.py"]
+CMD ["uvicorn", "src.api_service:app", "--host", "0.0.0.0", "--port", "8000"]
