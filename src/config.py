@@ -39,7 +39,7 @@ class Settings(BaseSettings):
     RETRIEVAL_K: int = 3
     
     # Embeddings
-    EMBEDDING_MODEL: str = "all-MiniLM-L6-v2"
+    EMBEDDING_MODEL: str = "models/text-embedding-004"
     
     # Logging
     LOG_LEVEL: str = "INFO"
